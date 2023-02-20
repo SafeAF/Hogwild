@@ -4,12 +4,14 @@
 
 <%= render 'home/message_form' %>
 
+<%= turbo_stream_from 'messages', id: "messages" %>
 <% @messages.each do |message|%>
-    <p>
-    <%= message.user.username %> <br/>
-    <%= message.created_at %> <br/>
-    <%= message.body %>
-    </p>
-
+   <%= turbo_frame_tag(dom_id(message)) do %>
+        <p>
+        <%= message.user.username %> <br/>
+        <%= message.created_at %> <br/>
+        <%= message.body %>
+        </p>
+    <% end %>
 
 <% end %>
