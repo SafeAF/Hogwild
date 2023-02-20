@@ -6,7 +6,7 @@ rails g devise:install
 rails g devise:views
 rails g devise:model user
 
-### Custom Controllers
+### Add username to devise registration controllers
 
 rails g devise:controllers users
 
@@ -19,3 +19,10 @@ add to routes.rb
      }
    
 `
+user/registration_controller.rb
+ 
+ `before_action :configure_sign_up_params, only: [:create]
+ def configure_sign_up_params
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
+  end
+  `
