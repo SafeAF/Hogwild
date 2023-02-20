@@ -1,24 +1,21 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Devise
 
-Things you may want to cover:
+rails g devise:install
+rails g devise:views
+rails g devise:model user
 
-* Ruby version
+### Custom Controllers
 
-* System dependencies
+rails g devise:controllers users
 
-* Configuration
 
-* Database creation
+add to routes.rb
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+`    devise_for :users, controllers: {
+       sessions: 'users/sessions',
+       registrations: 'users/registrations'
+     }
+   
+`
