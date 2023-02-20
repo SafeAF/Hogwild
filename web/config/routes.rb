@@ -11,5 +11,5 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :message
+  resources :messages
 end

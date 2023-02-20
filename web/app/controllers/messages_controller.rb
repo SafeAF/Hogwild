@@ -1,7 +1,12 @@
-class MessageController < ApplicationController
+class MessagesController < ApplicationController
     before_action :authenticate_user!
-    before_action :set_message, only: %i[ show edit update destroy]
+    
 
+    def index
+        @messages = Message.all
+
+    end
+    
     def new
         @message = Message.new
     end
@@ -33,15 +38,9 @@ class MessageController < ApplicationController
 
     private
 
-    def set_message
-        @message = Message.find(params[:id])
-    end
 
     def message_params
         params.require(:message).permit(:body)
     end
 
-    def set_listing
-        @listing = Listing.find(params[:listing_id])
-    end
 end
