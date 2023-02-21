@@ -1,9 +1,21 @@
 
+<div id="container">
 
 <h1>Messages</h1>
+<div id="row">
+<div id="col">
 
+<div id="message-form">
 <%= render 'home/message_form' %>
+</div>
+</div>
+</div>
 
+
+
+<div id="row">
+<div id="col">
+<div id="foo">
 <%= turbo_stream_from 'messages', id: "messages" %>
 <% @messages.each do |message|%>
    <%= turbo_frame_tag(dom_id(message)) do %>
@@ -15,3 +27,9 @@
     <% end %>
 
 <% end %>
+
+</div>
+</div>
+
+</div>
+</div>
