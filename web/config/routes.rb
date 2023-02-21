@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  root 'home#index'
+  root 'home#landing'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Defines the root path route ("/")
@@ -11,5 +11,6 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
+  get '/index', to: 'home#index'
   resources :messages
 end

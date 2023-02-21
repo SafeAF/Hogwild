@@ -1,30 +1,34 @@
-<div id="container-md">
-    <div class="row">
-        <div class="col"></div>
+<div id="container">
+    <div id="home-index">
+        <div class="row">
+            <div class="col-md-3"></div>
 
-        <div class="col">
-        <h1>Messages</h1>
-        
-        <div id="message-form">
-            <%= render 'messages/message_form' %>
-        </div>
+            <div class="col-md-6">
+            <h1>Messages</h1>
 
-        <div id="message-box">
-            <%= turbo_stream_from 'messages', id: "messages" %>
-            <% @messages.each do |message|%>
-                <%# why does this fail when put in _message partial, undefined key%>
-                <%= turbo_frame_tag(dom_id(message)) do %>
-                    <p>
-                    <%= message.user.username %> <br/>
-                    <%= message.created_at %> <br/>
-                    <%= message.body %>
-                    </p>
+            <div id="message-form">
+                <%= render 'messages/message_form' %>
+            </div>
+
+            <div id="message-box">
+                <%= turbo_stream_from 'messages', id: "messages" %>
+                <% @messages.each do |message|%>
+                    <%# why does this fail when put in _message partial, undefined key%>
+                    <%= turbo_frame_tag(dom_id(message)) do %>
+                        <p>
+                        <%= message.user.username %> <br/>
+                        <%= message.created_at %> <br/>
+                        <div id="message-body">
+                        <%= message.body %>
+                        </div>
+                        </p>
+                    <% end %>
                 <% end %>
-            <% end %>
-        </div>
+            </div>
 
-        <div class="col"></div>
-        
+            <div class="col-md-3"></div>
+            
+            </div>
         </div>
     </div>
 </div>

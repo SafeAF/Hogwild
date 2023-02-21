@@ -2,13 +2,26 @@
 @import 'bootstrap-icons/font/bootstrap-icons';
 
 
-#message-box {
-    width: 50%;
-    background-color: #aaa;
-    
+#home-index {
+    overflow-wrap: break-word;
 }
 
 #message-form {
-    width: 50%;
+    border: 3px solid;
     
+}
+
+#message-box {
+    border: 3px  solid;
+    background-color: #aaa;
+    margin-top: 10px;
+}
+
+
+#message-body {
+    
+    inline-size: min-content;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+
 }
