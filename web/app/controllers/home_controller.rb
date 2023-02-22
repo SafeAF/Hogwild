@@ -3,7 +3,8 @@ class HomeController < ApplicationController
   before_action :authenticate_user!, only: %i[index]
   def index
     @message = Message.new
-    @messages = Message.all.order(created_at: :desc).first(10)
+    @messages = Message.all.order(created_at: :asc).last(5)
+     
 
   end
 
