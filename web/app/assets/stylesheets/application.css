@@ -1,0 +1,31 @@
+
+.user-list{
+    background-color: #bbb;
+    border: 3px solid;
+}
+
+.home-index {
+    overflow-wrap: break-word;
+}
+
+.message-form {
+    border: 3px solid;
+    
+}
+
+.message-box {
+    border: 3px  solid;
+    background-color: #aaa;
+    margin-top: 10px;
+    height: 50vh;
+    overflow: hidden;
+}
+
+.message-entirety {
+ 
+}
+
+.message-body {
+   
+   
+}
